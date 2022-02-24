@@ -1,0 +1,1 @@
+Storage Classes; Different ways data can be srtored; Amazon S3 Standard (most expensive), S3 Infrequent Acccess (IA) Storage, S3 Reduced Redundancy Storage (Least redundant, tolerable), Glacier (least expensive but very expensive when you recover a lot of files). There are cost differences
