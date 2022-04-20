@@ -28,3 +28,16 @@ Create a deployement (this is better for load balancing amongst pods and elastic
 Scale deployments 
 `k scale deployment nginx-dep --replicas=5`
 
+To scale down
+`k scale deployment nginx-dep --replicas=3`
+
+Now we have 3 pods running in our deployment <br />
+`$ k get pods -o wide`
+````
+NAME                         READY   STATUS    RESTARTS   AGE    IP           NODE       NOMINATED NODE   READINESS GATES
+nginx-dep-845cc48b5d-25t8j   1/1     Running   0          27m    172.17.0.3   minikube   <none>           <none>
+nginx-dep-845cc48b5d-8d9kt   1/1     Running   0          113s   172.17.0.6   minikube   <none>           <none>
+nginx-dep-845cc48b5d-pxmrn   1/1     Running   0          113s   172.17.0.4   minikube   <none> 
+````
+
+
