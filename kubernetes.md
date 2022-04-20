@@ -10,3 +10,13 @@ minikube ip
 
 ssh into the node
 ssh docker@[192.xxx.xx.x]
+
+To check pods in a cluster
+kubectl get pods
+
+CHeck pods in a particular namespace
+kubectl get pods --namespace=kube-system
+
+To create a pod
+kubectl run nginx --image=nginx
+
