@@ -24,3 +24,7 @@ To get the details about a pod
 
 Create a deployement (this is better for load balancing amongst pods and elasticity)
 `kubectl create deployment nginx-dep --image=nginx`
+
+Scale deployments 
+`k scale deployment nginx-dep --replicas=5`
+
