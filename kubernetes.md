@@ -35,9 +35,18 @@ Now we have 3 pods running in our deployment <br />
 `$ k get pods -o wide`
 ````
 NAME                         READY   STATUS    RESTARTS   AGE    IP           NODE       NOMINATED NODE   READINESS GATES
-nginx-dep-845cc48b5d-25t8j   1/1     Running   0          27m    172.17.0.3   minikube   <none>           <none>
-nginx-dep-845cc48b5d-8d9kt   1/1     Running   0          113s   172.17.0.6   minikube   <none>           <none>
-nginx-dep-845cc48b5d-pxmrn   1/1     Running   0          113s   172.17.0.4   minikube   <none> 
+nginx-dep-845cc48b5d-25t8j   1/1     Running   0          27m    1xx.xx.xx.x   minikube   <none>           <none>
+nginx-dep-845cc48b5d-8d9kt   1/1     Running   0          113s   1xx.xx.xx.x   minikube   <none>           <none>
+nginx-dep-845cc48b5d-pxmrn   1/1     Running   0          113s   1xx.xx.xx.x   minikube   <none> 
 ````
+
+We can connect to individual pods within the the node (ssh into the node using ssh docker@ip-addr), using 
+`curl 1xx.xx.xx.x`. We should get the nginx default webserver output.
+But we cannot obviously cannot connect from out main machine to the pods because it is external of course. <br />
+To connect to these pods externally, we create services.
+
+
+
+
 
 
