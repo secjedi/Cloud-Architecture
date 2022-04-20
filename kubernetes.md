@@ -19,4 +19,7 @@ CHeck pods in a particular namespace
 To create a pod
 `kubectl run nginx --image=nginx`
 
+To get the details about a pod
+`kubectl describe pod nginx`
+
 
