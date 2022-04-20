@@ -22,4 +22,5 @@ To create a pod
 To get the details about a pod
 `kubectl describe pod nginx`
 
-
+Create a deployement (this is better for load balancing amongst pods and elasticity)
+`kubectl create deployment nginx-dep --image=nginx`
