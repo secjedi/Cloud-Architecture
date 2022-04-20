@@ -7,3 +7,6 @@ minikube start --driver=virtualbox
 Get node ip
 
 minikube ip
+
+ssh into the node
+ssh docker@[192.xxx.xx.x]
