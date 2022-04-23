@@ -110,8 +110,18 @@ To build docker image
 Push to repo in dockerhub
 - First login `sudo docker login`
 - Then push to remote hub `sudo docker push secjedi/k8s-web-hello`
-Now image is ready and available on docker hub
-![alt text](https://github.com/secjedi/CyberDefense/blob/main/Images/zerologon/docker.png) <br />
+- Now image is ready and available on docker hub ![alt text](https://github.com/secjedi/CyberDefense/blob/main/Images/zerologon/docker.png)
+- Create deplyement with this image as the base image `kubectl create deployment k8s-web-hello --image=secjedi/k8s-web-hello`
+- `$ kubectl get pods
+NAME                             READY   STATUS    RESTARTS   AGE
+k8s-web-hello-749d77f744-hc9m9   1/1     Running   0          5m5s`
+- Create service; cluster ip `$ kubectl expose deployment k8s-web-hello --port=3000
+service/k8s-web-hello exposed`
+- View the cluster ip `$ kubectl get svc
+NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+k8s-web-hello   ClusterIP   10.x.xx.xxx   <none>        xxx/TCP   34s
+kubernetes      ClusterIP   10.xx.xx.xx       <none>        443/TCP    2d23h`
+
 
 
 
