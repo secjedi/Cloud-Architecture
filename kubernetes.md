@@ -110,7 +110,8 @@ To build docker image
 Push to repo in dockerhub
 - First login `sudo docker login`
 - Then push to remote hub `sudo docker push secjedi/k8s-web-hello`
-
+Now image is ready and available on docker hub
+![alt text](https://github.com/secjedi/CyberDefense/blob/main/Images/zerologon/docker.png) <br />
 
 
 
