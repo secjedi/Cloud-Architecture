@@ -180,6 +180,34 @@ Now we can connect to the node externally using the minikube ip and port 31496
 ![alt text](https://github.com/secjedi/CyberDefense/blob/main/Images/zerologon/connect.png) <br />
 
 
+We can also connect using the command `$ minikube service k8s-web-hello`
+
+To see only url: `minikube service k8s-web-hello --url`
+
+Create a load balancer service `k expose deployment k8s-web-hello --type=LoadBalancer --port=3000` <br />
+For kubernetes on cloud providers, load baalancers are automatically created.
+
+Roll update to your image: Pserhaps you made changes to your app, tehn you have to rebuild the image using docker build.
+`sudo docker build . -t secjedi/k8s-web-hello:2.0.0`
+<br />
+`sudo docker push secjedi/k8s-web-hello:2.0.0`
+NOw we will have teh latest image onn dockerhub <br />
+
+On the terminal:` k set image deployment k8s-web-hello k8s-web-hello=secjedi/k8s-web-hello:2.0.0` <br />
+Then immediately paste:
+`k rollout status deploy k8s-web-hello` <br />
+```
+k get pods
+NAME                             READY   STATUS    RESTARTS   AGE
+k8s-web-hello-6ff48dd8cb-2x4l8   1/1     Running   0          22s
+k8s-web-hello-6ff48dd8cb-ndx4t   1/1     Running   0          33s
+k8s-web-hello-6ff48dd8cb-zbwrk   1/1     Running   0          26s
+k8s-web-hello-6ff48dd8cb-zm656   1/1     Running   0          33s
+
+```
+Seeing the timing, we can see that new pods were created immediately. we can also check using curl. <br />
+If we delete one of the pods, minikube restarts another one immediately. Because we has initially stated that we need 4 replicas running.
+
 
 
 
