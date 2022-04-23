@@ -53,8 +53,8 @@ To check the created service: <br />
 ```
 $ kubectl get services
 NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
-kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP    2d21h
-nginx-dep    ClusterIP   10.105.1.166   <none>        8080/TCP   29m
+kubernetes   ClusterIP   10.xx.x.x      <none>        443/TCP    2d21h
+nginx-dep    ClusterIP   10.xxx.xx.xxx   <none>        8080/TCP   29m
 ```
 The first is a custom service. The second is the nginx service we just created.
 
