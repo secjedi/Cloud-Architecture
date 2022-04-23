@@ -209,6 +209,7 @@ Seeing the timing, we can see that new pods were created immediately. we can als
 If we delete one of the pods, minikube restarts another one immediately. Because we has initially stated that we need 4 replicas running.
 
 
+### Visualizing DashBoars in Kubernetes
 
 
 
