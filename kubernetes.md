@@ -58,5 +58,7 @@ nginx-dep    ClusterIP   10.xxx.xx.xxx   <none>        8080/TCP   29m
 ```
 The first is a custom service. The second is the nginx service we just created.
 
+If we have a database deployment and we dont want it to be reached from the outside, the best thing to do is to create a cluster IP so other deployment in the cluster would access the database deployment from this newly created cluster IP.
+
 
 
