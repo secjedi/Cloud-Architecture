@@ -46,7 +46,17 @@ But we cannot obviously cannot connect from out main machine to the pods because
 To connect to these pods externally, we create services.
 
 
+To connect to specific deployments using specific ip address, use services; cluster Ip; virtual ip addresses. they  will be single ip addresses for all pods.
+Using service, we can expose specific pods from the deployment. Since nginx servers are inside the pods, we can expose port 80 so it can be reached from the outside via port 8080 `kubectl expose deployment nginx-dep --port=8080 --target-port=80`
 
+To check the created service: <br />
+```
+$ kubectl get services
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP    2d21h
+nginx-dep    ClusterIP   10.105.1.166   <none>        8080/TCP   29m
+```
+The first is a custom service. The second is the nginx service we just created.
 
 
 
