@@ -176,8 +176,8 @@ NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
 k8s-web-hello   NodePort    10.xx.xx.xx   <none>        3000:31496/TCP   44s
 kubernetes      ClusterIP   10.96.0.1      <none>        443/TCP          2d23h
 ```
-NOw we can connect to the node externally using the minikube ip and port 31496
-
+Now we can connect to the node externally using the minikube ip and port 31496
+![alt text](https://github.com/secjedi/CyberDefense/blob/main/Images/zerologon/connect.png) <br />
 
 
 
