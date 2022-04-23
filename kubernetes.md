@@ -58,7 +58,49 @@ nginx-dep    ClusterIP   10.xxx.xx.xxx   <none>        8080/TCP   29m
 ```
 The first is a custom service. The second is the nginx service we just created.
 
-If we have a database deployment and we dont want it to be reached from the outside, the best thing to do is to create a cluster IP so other deployment in the cluster would access the database deployment from this newly created cluster IP.
+If we have a database deployment and we dont want it to be reached from the outside, the best thing to do is to create a cluster IP so other deployment in the cluster would access the database deployment from this newly created cluster IP. cluster IP is only available inside the cluster. <br />
+
+We can connect to the ip address in the cluster after (ssh docker@minikub-ip) then `curl 10.xx.xx.xxx:8080`
+
+The response provided would be from one of the pods in the deplyment.
+
+```
+$ ssh docker@192.xx.xx.xxx
+docker@192.xx.xx.xxx's password: 
+                         _             _            
+            _         _ ( )           ( )           
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __  
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+$ curl 10.xx.x.xx:8080
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+
 
 
 
