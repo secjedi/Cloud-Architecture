@@ -1,5 +1,5 @@
 Nodes are like servers; they can be local or remote.
-Each nodes consists of apods that have one container running in each of them. The conatiners share same ip address and vokume. SO keep this in mind. <br />
+Each nodes consists of apods that have one container running in each of them. The conatiners share same ip address and vokume. So keep this in mind. <br />
 Start kubernetes node <br />
 
 `minikube start --driver=virtualbox`
@@ -13,7 +13,7 @@ ssh into the node
 To check pods in a cluster
 `kubectl get pods`
 
-CHeck pods in a particular namespace
+Check pods in a particular namespace
 `kubectl get pods --namespace=kube-system`
 
 To create a pod
@@ -99,6 +99,23 @@ Commercial support is available at
 </body>
 </html>
 ```
+To describe service `kubectl describe service nginx-dep`
+
+###Create a webserver, dockerize it using docker file, create deployments...
+https://github.com/bstashchuk/k8s
+
+To build docker image
+`docker build . -t secjedi/k8s-web-hello`
+
+Push to repo in dockerhub
+- First login `sudo docker login`
+- Then push to remote hub `sudo docker push secjedi/k8s-web-hello`
+
+
+
+
+
+
 
 
 
