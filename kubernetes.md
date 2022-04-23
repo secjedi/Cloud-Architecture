@@ -13,6 +13,8 @@ ssh into the node
 To check pods in a cluster
 `kubectl get pods`
 
+To create alias `alias k=kubectl`
+
 Check pods in a particular namespace
 `kubectl get pods --namespace=kube-system`
 
@@ -121,6 +123,61 @@ service/k8s-web-hello exposed`
 NAME            TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
 k8s-web-hello   ClusterIP   10.x.xx.xxx   <none>        xxx/TCP   34s
 kubernetes      ClusterIP   10.xx.xx.xx       <none>        443/TCP    2d23h`
+- view webserver in cluster using cluster ip <br />
+```
+ssh docker@192.xx.xx.xx
+docker@192.xx.xx.xx's password: 
+                         _             _            
+            _         _ ( )           ( )           
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __  
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+$ curl 10.xx.xx.xxx:3000
+VERSION 2: Hello from the k8s-web-hello-749d77f744-hc9m9
+```
+sclae deployment `k scale deployment k8s-web-hello --replicas=4`
+
+Now we see 4 pods
+```
+$ k get pods
+NAME                             READY   STATUS    RESTARTS   AGE
+k8s-web-hello-749d77f744-7p2wd   1/1     Running   0          26s
+k8s-web-hello-749d77f744-cczvv   1/1     Running   0          26s
+k8s-web-hello-749d77f744-d8bcv   1/1     Running   0          26s
+k8s-web-hello-749d77f744-hc9m9   1/1     Running   0          17m
+```
+If we connect back again to our cluster and try reaching the cluster ip, we would get responses from different pods at different times. So, load is baalnced across different pods.  <br/>
+```
+docker@192.xx.xx.xx's password: 
+                         _             _            
+            _         _ ( )           ( )           
+  ___ ___  (_)  ___  (_)| |/')  _   _ | |_      __  
+/' _ ` _ `\| |/' _ `\| || , <  ( ) ( )| '_`\  /'__`\
+| ( ) ( ) || || ( ) || || |\`\ | (_) || |_) )(  ___/
+(_) (_) (_)(_)(_) (_)(_)(_) (_)`\___/'(_,__/'`\____)
+
+$ curl 10.xx.xx.xx:3000
+VERSION 2: Hello from the k8s-web-hello-749d77f744-hc9m9$ curl 10.xx.xx.xx:3000
+VERSION 2: Hello from the k8s-web-hello-749d77f744-d8bcv$ curl 10.xx.xx.xx:3000
+VERSION 2: Hello from the k8s-web-hello-749d77f744-7p2wd$ curl 10.xx.xx.xx:3000;echo
+VERSION 2: Hello from the k8s-web-hello-749d77f744-7p2wd
+$ curl 10.xx.xx.xx:3000;echo
+VERSION 2: Hello from the k8s-web-hello-749d77f744-cczvv
+```
+<br />
+Now to create node ip `$ k expose deployment k8s-web-hello --type=NodePort --port=3000
+service/k8s-web-hello exposed`
+
+```
+$ k get svc
+NAME            TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+k8s-web-hello   NodePort    10.xx.xx.xx   <none>        3000:31496/TCP   44s
+kubernetes      ClusterIP   10.96.0.1      <none>        443/TCP          2d23h
+```
+NOw we can connect to the node externally using the minikube ip and port 31496
+
 
 
 
