@@ -210,6 +210,7 @@ If we delete one of the pods, minikube restarts another one immediately. Because
 
 
 ### Visualizing DashBoards in Kubernetes
+`minikube dashboard`
 
 
 
