@@ -213,6 +213,10 @@ If we delete one of the pods, minikube restarts another one immediately. Because
 `minikube dashboard`
 
 
+### Connecting to another deployments via service name and not cluster IP
+kubernetes is able to resolve the service name to cluster IP
+
+
 
 
 
