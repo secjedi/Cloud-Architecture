@@ -214,7 +214,10 @@ If we delete one of the pods, minikube restarts another one immediately. Because
 
 
 ### Connecting to another deployments via service name and not cluster IP
-kubernetes is able to resolve the service name to cluster IP
+kubernetes is able to resolve the service name to cluster IP <br />
+- configure deployment and service in one yaml file
+- Deploy using `k apply -f k8s-web-to-nginx.yaml -f nginx.yaml`
+- so we are deploying two deployments with services embedded in the same file. Now we can talk to the nginx server via /nginx endpoint.
 
 
 
