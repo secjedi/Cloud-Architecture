@@ -220,6 +220,11 @@ kubernetes is able to resolve the service name to cluster IP <br />
 - so we are deploying two deployments with services embedded in the same file. Now we can talk to the nginx server via /nginx endpoint.
 
 
+## Kubernetes Security
+- Use service accounts to communicate with API servers
+
+
+
 
 
 
