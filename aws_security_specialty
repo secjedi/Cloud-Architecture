@@ -4,7 +4,7 @@
 - Management
 - Storage Device Decommissioning
 
-###BUsiness Cont. Mgt
+###Business Cont. Mgt
 - Availability
 - Incidence response
 - Company-w0de Executive Review
@@ -30,5 +30,7 @@
 We do a gap analysis for products we deply on aws. even if they are compliant, we need to be sure.
 
 ### Shared Rsponsiblity
-AWS- Security of the Cloud
-ME- Security in the cloud
+AWS- Security of the Cloud: Global infra, hardware, sotware, networking facilities, "managed services" (S3 Dynamo DB). Storage, database, computer, networking. If we dont have access to the underlying application, they handle it
+ME- Security in the cloud: EC2, updates and security patches, config of AWS provided firewall, customer data, platfomr, applications, OS, client side data encryption and data authentication, serve-side encryption
+
+The model chnges for different service types:
