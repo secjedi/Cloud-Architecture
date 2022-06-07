@@ -1,1 +1,31 @@
+###Physical and Environment Security
+- Fire Detection and Suppression
+- Power Climate and Temperature
+- Management
+- Storage Device Decommissioning
+
+###BUsiness Cont. Mgt
+- Availability
+- Incidence response
+- Company-w0de Executive Review
+- Communication
+
+###Network Security
+- Secure Net. Arch
+- Secure Acceess poonunt
+- Transimmission Protection
+- Amazon Corporate Segregation
+- Fault-Tolerant Design
+- Network MOnitoring
+
+##AWS Access
+- Account Review and Audit
+- Background Checks
+- Cred policy
+
+###Secure Design Principles
+- Change management
+- software and infrastructure
+
+We do a gap analysis for products we deply on aws. even if they are compliant, we need to be sure.
 
