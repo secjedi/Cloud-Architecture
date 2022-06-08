@@ -34,9 +34,9 @@ AWS- Security of the Cloud: Global infra, hardware, sotware, networking faciliti
 ME- Security in the cloud: EC2, updates and security patches, config of AWS provided firewall, customer data, platfomr, applications, OS, client side data encryption and data authentication, serve-side encryption
 
 The model chnges for different service types:
-- Infrstructure
-- Container
-- Abstract; S3, 
+- Infrstructure; you are responsible for the OS (EC2, EBS, VPC)
+- Container; RDS, EMR, Elastic Beanstalk
+- Abstracted; S3,
 
 AWS Config is used to provide an inventory of our AWS resources.
 Auditabilty: We use AWS CloudTrail to keep track of who is doing what in our cloud environment. 
@@ -49,3 +49,13 @@ Automation: Are our processors repeatable?
 - AWS OpsWorks
 - AWS CodeDeploy
 - AWS Elastic Beanstalk
+
+
+Trusted Advisor warns us
+
+AAA model
+Authentication: IAM
+Authorization: Policies
+Accounting: CloudTrail
+
+
