@@ -37,3 +37,5 @@ The model chnges for different service types:
 - Infrstructure
 - Container
 - Abstract; S3, 
+
+AWS Config is used to provide an inventory of our AWS inventory
