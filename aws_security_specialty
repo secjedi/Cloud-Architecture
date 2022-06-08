@@ -34,3 +34,6 @@ AWS- Security of the Cloud: Global infra, hardware, sotware, networking faciliti
 ME- Security in the cloud: EC2, updates and security patches, config of AWS provided firewall, customer data, platfomr, applications, OS, client side data encryption and data authentication, serve-side encryption
 
 The model chnges for different service types:
+- Infrstructure
+- Container
+- Abstract; S3, 
