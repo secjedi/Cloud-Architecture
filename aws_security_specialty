@@ -38,4 +38,14 @@ The model chnges for different service types:
 - Container
 - Abstract; S3, 
 
-AWS Config is used to provide an inventory of our AWS inventory
+AWS Config is used to provide an inventory of our AWS resources.
+Auditabilty: We use AWS CloudTrail to keep track of who is doing what in our cloud environment. 
+Controllability:
+- AWS KMS (Multi tenant but shared underlying hardware)
+- AWS CLoudHSM (dedicated hardware): used for FIPS 140-2 Compliance
+Agility: How quickly we can adapt to changes:
+- AWS Cloud Formation
+Automation: Are our processors repeatable?
+- AWS OpsWorks
+- AWS CodeDeploy
+- AWS Elastic Beanstalk
