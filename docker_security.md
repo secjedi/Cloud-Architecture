@@ -1,5 +1,5 @@
 #Using Docker Bench to Enhance Container Security
-Using acloudguru as a Lab/Learning environment. <>
+Using acloudguru as a Lab/Learning environment. <br />
 1. Clone the docker bench repo from GitHub: `$ git clone https://github.com/docker/docker-bench-security.git`
 2. Change your present working directory to docker-bench-security and run the docker-bench-security script.:
 `$ cd docker-bench-security`
